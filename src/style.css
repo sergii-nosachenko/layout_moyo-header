@@ -1,10 +1,5 @@
-/* Styles go here */
-
-:root {
-  --moyo-white: #fff;
-  --moyo-black: #000;
-  --moyo-blue: #00acdc;
-}
+/* THIS CODE FROM
+https://mate-academy.github.io/layout_solutions/moyo-header/style.css */
 
 body {
   margin: 0;
@@ -12,59 +7,76 @@ body {
 
 .header {
   display: flex;
-  padding: 0 50px;
   justify-content: space-between;
-  background-color: var(--moyo-white);
+  align-items: center;
+
+  padding: 0 50px;
+
+  background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.header__logo {
-  margin: 10px 0;
+.logo {
+  display: block;
+  height: 40px;
+  width: 40px;
 }
 
-.logo__link {
-  display: flex;
+.logo__image {
+  height: 100%;
+  width: 100%;
 }
 
 .nav__list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
-.nav__item:not(:last-child) {
-  margin-right: 20px;
+.nav__item {
+  margin-left: 20px;
+}
+
+.nav__item:first-child {
+  margin-left: 0;
 }
 
 .nav__link {
   position: relative;
+
   display: flex;
   align-items: center;
-  text-decoration: none;
-  height: 100%;
-  min-height: 60px;
+
+  height: 60px;
+
   font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  text-transform: uppercase;
   font-size: 12px;
-  color: var(--moyo-black);
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+
+  transition: color 0.3s;
 }
 
-.nav__link.is-active,
 .nav__link:hover {
-  color: var(--moyo-blue);
+  color: #00acdc;
+}
+
+.nav__link.is-active {
+  color: #00acdc;
 }
 
 .nav__link.is-active::after {
-  content: " ";
+  content: "";
   position: absolute;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+
   height: 4px;
-  background-color: var(--moyo-blue);
-  border-radius: 8px;
+  border-radius: 2px;
+  background-color: #00acdc;
 }
